@@ -1,0 +1,16 @@
+# .github/workflows/reusable.yml
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a message
+        run: echo "Hello, ${{ inputs.name }} 👋"
